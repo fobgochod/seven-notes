@@ -10,6 +10,6 @@
 
 `@formatter:on`
 
-1. [zookeeper介绍、安装、shell cli 使用，基本概念验证](zh/backend/zookeeper/lesson/zookeeper1.md)
-2. [zookeeper原理知识，paxos、zab、角色功能、API开发基础](zh/backend/zookeeper/lesson/zookeeper2.md)
-3. [zookeeper案例：分布式配置注册发现、分布式锁、ractive模式编程](zh/backend/zookeeper/lesson/zookeeper3.md)
+1. [zookeeper介绍、安装、shell cli 使用，基本概念验证](zookeeper1.md)
+2. [zookeeper原理知识，paxos、zab、角色功能、API开发基础](zookeeper2.md)
+3. [zookeeper案例：分布式配置注册发现、分布式锁、ractive模式编程](zookeeper3.md)

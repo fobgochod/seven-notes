@@ -66,7 +66,7 @@ public class HowToCreateThread {
 
 ## 线程状态
 
-![](.vuepressc/images/juc/thread-state.png)
+![](/images/juc/thread-state.png)
 
 - New 创建线程，还没调用start()方法
 - Runnable 调用start()方法后（被线程调度器执行）

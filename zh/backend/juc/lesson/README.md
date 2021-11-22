@@ -16,12 +16,12 @@
 
 `@formatter:on`
 
-1. [单机高并发应该掌握的线程基础：线程状态，异常与锁等](zh/backend/juc/lesson/juc1.md)
-2. [解析自旋锁CAS操作与volatile](zh/backend/juc/lesson/juc2.md)
-3. [JUC包下AtomicXXX类与新的同步机制：Latch Semaphore等](zh/backend/juc/lesson/juc3.md)
-4. [LockSupport，高频面试题，AQS源码，以及源码阅读方法论](zh/backend/juc/lesson/juc4.md)
-5. [强软弱虚四种引用以及ThreadLocal的原理与源码](zh/backend/juc/lesson/juc5.md)
-6. [线程池可用的各种高并发容器详解：CopyOnWriteList，BlockingQueue等](zh/backend/juc/lesson/juc6.md)
-7. [详解线程池：自定义线程池，JDK自带线程池，ForkJoin，源码解析等(一)](zh/backend/juc/lesson/juc7.md)
-8. [详解线程池：自定义线程池，JDK自带线程池，ForkJoin，源码解析等(二)](zh/backend/juc/lesson/juc8.md)
-9. [单机压测工具JMH，单机最快MQ - Disruptor原理解析](zh/backend/juc/lesson/juc9.md)
+1. [单机高并发应该掌握的线程基础：线程状态，异常与锁等](juc1.md)
+2. [解析自旋锁CAS操作与volatile](juc2.md)
+3. [JUC包下AtomicXXX类与新的同步机制：Latch Semaphore等](juc3.md)
+4. [LockSupport，高频面试题，AQS源码，以及源码阅读方法论](juc4.md)
+5. [强软弱虚四种引用以及ThreadLocal的原理与源码](juc5.md)
+6. [线程池可用的各种高并发容器详解：CopyOnWriteList，BlockingQueue等](juc6.md)
+7. [详解线程池：自定义线程池，JDK自带线程池，ForkJoin，源码解析等(一)](juc7.md)
+8. [详解线程池：自定义线程池，JDK自带线程池，ForkJoin，源码解析等(二)](juc8.md)
+9. [单机压测工具JMH，单机最快MQ - Disruptor原理解析](juc9.md)

@@ -15,11 +15,11 @@
 
 `@formatter:on`
 
-1. [redis 介绍及NIO原理介绍](zh/database/redis/lesson/redis1.md)
-2. [redis的string类型&bitmap](zh/database/redis/lesson/redis2.md)
-3. [redis的list、set、hash、sorted_set、skiplist](zh/database/redis/lesson/redis3.md)
-4. [redis的消息订阅、pipeline、事务、modules、布隆过滤器、缓存LRU](zh/database/redis/lesson/redis4.md)
-5. [redis的持久化RDB、fork、copyonwrite、AOF、RDB&AOF混合使用](zh/database/redis/lesson/redis5.md)
-6. [redis的集群：主从复制、CAP、PAXOS、cluster分片集群01](zh/database/redis/lesson/redis6.md)
-7. [redis的集群：主从复制、CAP、PAXOS、cluster分片集群02](zh/database/redis/lesson/redis7.md)
-8. [redis开发：spring.data.redis、连接、序列化、high/low api](zh/database/redis/lesson/redis8.md)
+1. [redis 介绍及NIO原理介绍](redis1.md)
+2. [redis的string类型&bitmap](redis2.md)
+3. [redis的list、set、hash、sorted_set、skiplist](redis3.md)
+4. [redis的消息订阅、pipeline、事务、modules、布隆过滤器、缓存LRU](redis4.md)
+5. [redis的持久化RDB、fork、copyonwrite、AOF、RDB&AOF混合使用](redis5.md)
+6. [redis的集群：主从复制、CAP、PAXOS、cluster分片集群01](redis6.md)
+7. [redis的集群：主从复制、CAP、PAXOS、cluster分片集群02](redis7.md)
+8. [redis开发：spring.data.redis、连接、序列化、high/low api](redis8.md)

@@ -15,10 +15,10 @@
 
 `@formatter:on`
 
-1. [mysql调优--使用profiles,performance_schema性能监控](zh/database/mysql/lesson/mysql1.md)
-2. [mysql调优--数据类型和schema优化](zh/database/mysql/lesson/mysql2.md)
-3. [mysql调优--索引基本实现原理及索引优化](zh/database/mysql/lesson/mysql3.md)
-4. [mysql调优--mysql索引优化实现细节](zh/database/mysql/lesson/mysql4.md)
+1. [mysql调优--使用profiles,performance_schema性能监控](mysql1.md)
+2. [mysql调优--数据类型和schema优化](mysql2.md)
+3. [mysql调优--索引基本实现原理及索引优化](mysql3.md)
+4. [mysql调优--mysql索引优化实现细节](mysql4.md)
 5. [mysql调优--mysql查询优化分析](mysql5.md)
 6. [mysql调优--mysql分区设计及分区优化](mysql6.md)
 7. [mysql调优--mysql分区优化2及参数设计优化](mysql7.md)

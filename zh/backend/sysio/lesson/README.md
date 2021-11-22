@@ -20,13 +20,13 @@
 
 `@formatter:on`
 
-1. [虚拟文件系统，文件描述符，IO重定向](zh/backend/sysio/lesson/sysio1.md)
-2. [内核中PageCache、mmap作用、java文件系统io、nio、内存中缓冲区作用](zh/backend/sysio/lesson/sysio2.md)
-3. [Socket编程BIO及TCP参数](zh/backend/sysio/lesson/sysio3.md)
-4. [C10K问题及NIO精讲和IO模型性能压测](zh/backend/sysio/lesson/sysio4.md)
-5. [网络编程之多路复用器及Epoll精讲](zh/backend/sysio/lesson/sysio5.md)
-6. [网络编程java API 实战多路复用器开发](zh/backend/sysio/lesson/sysio6.md)
-7. [全手写急速理解Netty模型及IO模型应用实战](zh/backend/sysio/lesson/sysio7.md)
+1. [虚拟文件系统，文件描述符，IO重定向](sysio1.md)
+2. [内核中PageCache、mmap作用、java文件系统io、nio、内存中缓冲区作用](sysio2.md)
+3. [Socket编程BIO及TCP参数](sysio3.md)
+4. [C10K问题及NIO精讲和IO模型性能压测](sysio4.md)
+5. [网络编程之多路复用器及Epoll精讲](sysio5.md)
+6. [网络编程java API 实战多路复用器开发](sysio6.md)
+7. [全手写急速理解Netty模型及IO模型应用实战](sysio7.md)
 8. [Netty之IO模型开发本质手写部分实现推导篇](sysio8.md)
 9. [全手写基于Netty的RPC框架自定义协议，连接池](sysio9.md)
 10. [全手写基于Netty的RPC框架 协议编解码问题 粘包拆包与内核关系](sysio10.md)

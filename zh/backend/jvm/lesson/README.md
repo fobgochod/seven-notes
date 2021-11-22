@@ -18,8 +18,8 @@
 
 `@formatter:on`
 
-1. [JVM入门级class文件格式](zh/backend/jvm/lesson/jvm1.md)
-2. [详解Class加载过程](zh/backend/jvm/lesson/jvm2.md)
-3. [Java内存模型](zh/backend/jvm/lesson/jvm3.md)
-4. [内存屏障与JVM指令](zh/backend/jvm/lesson/jvm4.md)
-5. [Java运行时数据区和常用指令](zh/backend/jvm/lesson/jvm5.md)
+1. [JVM入门级class文件格式](jvm1.md)
+2. [详解Class加载过程](jvm2.md)
+3. [Java内存模型](jvm3.md)
+4. [内存屏障与JVM指令](jvm4.md)
+5. [Java运行时数据区和常用指令](jvm5.md)
