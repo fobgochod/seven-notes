@@ -1,0 +1,21 @@
+# redis开发：spring.data.redis、连接、序列化、high/low api
+
+- 前置
+    - 高并发
+    - Redis做缓存
+- 击穿：
+    - Key过期 LRU LFU
+    - Key过期造成并发访问数据库
+    - 解决：加锁
+- 穿透
+    - 查询系统不存在的数据
+    - 解决：布隆过滤器
+        - client包含
+        - client包含算法 bitmap->redis
+        - redis集成布隆
+        - 问题：只能增不能删除 布谷鸟
+- 雪崩
+    - 大量的key同时失效
+    - 解决
+      - 时点性无关：随机过期时间
+      - 零点：强依赖击穿方案

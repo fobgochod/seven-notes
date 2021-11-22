@@ -1,0 +1,30 @@
+{
+    "name": "seven",
+    "version": "1.0.0",
+    "author": "fobgochod@gmail.com",
+    "description": "Seven",
+    "keywords": [],
+    "main": "index.js",
+    "license": "Apache License 2.0",
+    "directories": {
+        "doc": "seven"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "vuepress dev .",
+        "build": "vuepress build ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fobgochod/fobgochod.git"
+    },
+    "devDependencies": {
+        "vuepress": "^1.4.1",
+        "moment": "^2.27.0",
+        "@vuepress/plugin-back-to-top": "^1.5.2",
+        "markdown-it-task-lists": "^2.1.1",
+        "@vssue/api-github-v4": "^1.4.0",
+        "@vssue/vuepress-plugin-vssue": "^1.4.6",
+        "vuepress-plugin-nuggets-style-copy": "^1.0.3"
+    }
+}

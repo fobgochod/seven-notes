@@ -1,0 +1,21 @@
+language: node_js
+os: linux
+dist: xenial
+node_js:
+  - 10
+before_install:
+  - export TZ='Asia/Shanghai'
+install:
+  - npm install
+script:
+  - npm run build
+deploy:
+  - provider: pages
+    strategy: git
+    skip_cleanup: true
+    local_dir: dist
+    token: $gh_token
+    keep_history: true
+    target_branch: gh-pages
+    on:
+      branch: master

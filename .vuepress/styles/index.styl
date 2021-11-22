@@ -1,0 +1,56 @@
+.theme-default-content p.tip,
+.theme-default-content p.success {
+  padding: 12px 24px 12px 30px;
+  margin: 2em 0;
+  border-left-width: 4px;
+  border-left-style: solid;
+  background-color: #f8f8f8;
+  position: relative;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.theme-default-content p.tip:before,
+.theme-default-content p.success:before {
+  position: absolute;
+  top: 14px;
+  left: -12px;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
+  font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+}
+
+.theme-default-content p.tip code,
+.theme-default-content p.success code {
+  background-color: #efefef;
+}
+
+.theme-default-content p.tip em,
+.theme-default-content p.success em {
+  color: #304455;
+}
+
+.theme-default-content p.tip {
+  border-left-color: #f66;
+}
+
+.theme-default-content p.tip:before {
+  content: "!";
+  background-color: #f66;
+}
+
+.theme-default-content p.success {
+  border-left-color: #42b983;
+}
+
+.theme-default-content p.success:before {
+  content: "\f00c";
+  font-family: FontAwesome;
+  background-color: #42b983;
+}
