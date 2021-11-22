@@ -36,5 +36,10 @@ module.exports = [
                 ]
             }
         ]
-    }
+    },
+    {
+        text: 'PDF下载',
+        link: 'https://raw.githubusercontent.com/fobgochod/seven-notes/gh-pages/pdf/the-seven-notes.pdf',
+        target: "_blank"
+    },
 ]

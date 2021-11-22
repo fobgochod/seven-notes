@@ -12,7 +12,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "vuepress dev .",
-        "build": "vuepress build ."
+        "build": "vuepress build .",
+        "export": "vuepress export ."
     },
     "repository": {
         "type": "git",
@@ -22,9 +23,11 @@
         "@vssue/api-github-v4": "^1.4.0",
         "@vssue/vuepress-plugin-vssue": "^1.4.6",
         "@vuepress/plugin-back-to-top": "^1.5.2",
+        "easy-pdf-merge": "^0.2.0",
         "github-buttons": "^2.13.0",
         "markdown-it-task-lists": "^2.1.1",
         "moment": "^2.27.0",
+        "puppeteer": "^1.11.0",
         "vuepress": "^1.4.1",
         "vuepress-plugin-nuggets-style-copy": "^1.0.3"
     }

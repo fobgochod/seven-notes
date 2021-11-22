@@ -30,6 +30,7 @@ module.exports = {
     },
     plugins: [
         require('./plugins/read-time'),
+        require('./plugins/export'),
         ['@vuepress/back-to-top'],
         ["nuggets-style-copy", {
             copyText: '复制代码',

@@ -13,7 +13,7 @@
         name: "GitHubWrapper",
         mounted() {
             const GIT_PREFIX = 'https://raw.githubusercontent.com/fobgochod/seven-notes/master/.vuepress/public/images'
-            const ICYFENIX_CN = 'https://fobgochod.com/images/'
+            const ICYFENIX_CN = 'https://fobgochod.com/images'
             let raw = this.$refs.github_raw;
             let images = raw.querySelectorAll(`img[src^='${GIT_PREFIX}']`)
             images.forEach(i => {
