@@ -1,5 +1,5 @@
 module.exports = [
-    {text: '目录', link: '/summary'},
+    {text: '首页', link: '/'},
     {
         text: '阅读', items: [
             {text: 'Why技术', link: 'https://www.whywhy.vip'},

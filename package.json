@@ -19,12 +19,13 @@
         "url": "git+https://github.com/fobgochod/fobgochod.git"
     },
     "devDependencies": {
-        "vuepress": "^1.4.1",
-        "moment": "^2.27.0",
-        "@vuepress/plugin-back-to-top": "^1.5.2",
-        "markdown-it-task-lists": "^2.1.1",
         "@vssue/api-github-v4": "^1.4.0",
         "@vssue/vuepress-plugin-vssue": "^1.4.6",
+        "@vuepress/plugin-back-to-top": "^1.5.2",
+        "github-buttons": "^2.13.0",
+        "markdown-it-task-lists": "^2.1.1",
+        "moment": "^2.27.0",
+        "vuepress": "^1.4.1",
         "vuepress-plugin-nuggets-style-copy": "^1.0.3"
     }
 }
