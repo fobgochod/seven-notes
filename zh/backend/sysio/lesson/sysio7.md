@@ -31,7 +31,7 @@ cat 0<& 8
 exec 8<& -
 
 # 网卡信息
-cat /etc/sysconfig/network-scripts/ifcfg-eth0 
+cat /etc/sysconfig/network-scripts/ifcfg-eth0
 # 路由表
 route -b
 
@@ -69,7 +69,7 @@ ifconfig eth0:2 down
 
 # node02~node03
 # 1.修改内核arp协议
-cat /proc/sys/net/ipv4/conf/
+cd /proc/sys/net/ipv4/conf/
 ## eth0
 echo 1 > /proc/sys/net/ipv4/conf/eth0/arp_ignore
 echo 2 > /proc/sys/net/ipv4/conf/eth0/arp_announce
@@ -101,7 +101,23 @@ netstat -natp
 
 # node01
 ipvsadm -lnc
+FIN_WAIT：连接过，偷窥了所有的包
+SYN_RECV：基本上lvs都记录了，证明lvs没问题，一定是后边的网络层出问题
 ```
+
+### LVS高可用
+
+问题：
+LVS会挂，业务下线，单点故障
+RS(real server)会挂，一部分用户请求异常，LVS还存有这个RS的负载记录
+解决问题：
+单点故障的解决方式：它是一个，一个有问题，那么我们就用一堆：一变多~！
+2个思路：多点：a)主备 b)主主
+结论：先讨论主备
+方向性：
+效率性：
+
+主备，主（单点->主备）从
 
 ```sh
 # node01~node04

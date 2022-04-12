@@ -131,18 +131,53 @@
 ![](/images/jvm/jvm-2.png)
 ![](/images/jvm/jvm-3.png)
 
-垃圾收集器 | 区域 | 算法 | GC线程  | 描述
---- | --- | --- | --- | --- |
-Serial | 新生代 | 标记-复制 | 单线程(STW) | 1. JDK1.3.1之前HotSpot新生代唯一选择<br/>2. HotSpot客户端模式下默认的新生代收集器<br/>3. 简单高效(与其他收集器单线程相比)，它是收集器额外内存消耗(Memory Footprint)最小的
-ParNew | 新生代 | 标记-复制 | 多线程并行(STW) | 1. Serial多线程并行版本，其余行为包括控制参数、收集算法、STW、对象分配规、回收策略等都与Serial完全一致<br/>2. JDK7之前遗留系统中首选的新生代收集器<br/>3. 除了Serial收集器外，目前只有它能与CMS配合工作
-Parallel Scavenge | 新生代 | 标记-复制 | 多线程并行(STW) | 1. 目标是达到一个可控制的吞吐量(Throughput)，被称作"吞吐量优先收集器"<br/>2. -XX:+MaxGCPauseMillis：控制最大垃圾收集停顿时间，大于0毫秒<br/>3. -XX：GCTimeRatio：直接设置吞吐量大小，大于0小于100的整数<br/>4. -XX:+UseAdaptiveSizePolicy：虚拟机会根据当前系统的运行情况收集性能监控信息，动态调整这些参数以提供最合适的停顿时间或者最大的吞吐量。这种调节方式称为垃圾收集的自适应的调节策略（GC Ergonomics）
-Serial Old (MSC)(MarkSweepCompact) | 老年代 | 标记-整理 | 单线程(STW) | 1. 是Serial收集器老年代版本<br/>2. 主要意义是提供客户端模式下HotSpot虚拟机使用<br/>3. JDK5之前与Parallel Scavenge搭配使用<br/>4. 作为CMS收集器发生失败时的后备预案
-Parallel Old | 老年代 | 标记-整理 | 多线程并发(STW) | 1. JDK6才开始提供，Parallel Scavenge收集器的老年代版本<br/>2. 吞吐量优先(Parallel Scavenge+Parallel Old)
-CMS (Concurrent Mark Sweep) | 老年代 | 标记-清除 | 并发标记、并发清除 | 1. 四个步骤，1)初始标记 2)并发标记(增量更新) 3)重新标记 4)并发清除<br/>2. "并发低停顿收集器"，是HotSpot虚拟机追求低停顿的第一次成功尝试<br/>3. 只有CMS会有单独收集老年代的行为<br/>4. 三个明显缺点，1)对资源非常敏感，应为占用一部分线程而导致应用程序变慢，降低吞吐量 2) 无法处理"浮动垃圾"(Floating Garbage) 3)"标记-清除"算法必然会带来空间碎片
-G1 (Garbage First) | Region | 标记-整理、标记-复制 | 并发标记 | 1. 垃圾收集器技术发展历史上里程牌式的成功<br/>2.基于Region的内存布局<br/>3. JDK 7 Update 4正式提供商用
-Shenandoah | Region | | 并发标记、并发整理 | 是一款只有OpenJDK才会包含，而OracleJDK里反而不存在的收集器
-ZGC | Region | | 并发整理 | 2018年Oracle创建JEP333将ZGC提交给OpenJDK，推动其进入OpenJDK发布清单之中
+| 垃圾收集器                              | 区域     | 算法          | GC线程       | 描述                                                                                                                                                                                                                                                                  |
+|------------------------------------|--------|-------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Serial                             | 新生代    | 标记-复制       | 单线程(STW)   | 1. JDK1.3.1之前HotSpot新生代唯一选择<br/>2. HotSpot客户端模式下默认的新生代收集器<br/>3. 简单高效(与其他收集器单线程相比)，它是收集器额外内存消耗(Memory Footprint)最小的                                                                                                                                                 |
+| ParNew                             | 新生代    | 标记-复制       | 多线程并行(STW) | 1. Serial多线程并行版本，其余行为包括控制参数、收集算法、STW、对象分配规、回收策略等都与Serial完全一致<br/>2. JDK7之前遗留系统中首选的新生代收集器<br/>3. 除了Serial收集器外，目前只有它能与CMS配合工作                                                                                                                                         |
+| Parallel Scavenge                  | 新生代    | 标记-复制       | 多线程并行(STW) | 1. 目标是达到一个可控制的吞吐量(Throughput)，被称作"吞吐量优先收集器"<br/>2. -XX:+MaxGCPauseMillis：控制最大垃圾收集停顿时间，大于0毫秒<br/>3. -XX：GCTimeRatio：直接设置吞吐量大小，大于0小于100的整数<br/>4. -XX:+UseAdaptiveSizePolicy：虚拟机会根据当前系统的运行情况收集性能监控信息，动态调整这些参数以提供最合适的停顿时间或者最大的吞吐量。这种调节方式称为垃圾收集的自适应的调节策略（GC Ergonomics） |
+| Serial Old (MSC)(MarkSweepCompact) | 老年代    | 标记-整理       | 单线程(STW)   | 1. 是Serial收集器老年代版本<br/>2. 主要意义是提供客户端模式下HotSpot虚拟机使用<br/>3. JDK5之前与Parallel Scavenge搭配使用<br/>4. 作为CMS收集器发生失败时的后备预案                                                                                                                                                   |
+| Parallel Old                       | 老年代    | 标记-整理       | 多线程并发(STW) | 1. JDK6才开始提供，Parallel Scavenge收集器的老年代版本<br/>2. 吞吐量优先(Parallel Scavenge+Parallel Old)                                                                                                                                                                                |
+| CMS (Concurrent Mark Sweep)        | 老年代    | 标记-清除       | 并发标记、并发清除  | 1. 四个步骤，1)初始标记 2)并发标记(增量更新) 3)重新标记 4)并发清除<br/>2. "并发低停顿收集器"，是HotSpot虚拟机追求低停顿的第一次成功尝试<br/>3. 只有CMS会有单独收集老年代的行为<br/>4. 三个明显缺点，1)对资源非常敏感，应为占用一部分线程而导致应用程序变慢，降低吞吐量 2) 无法处理"浮动垃圾"(Floating Garbage) 3)"标记-清除"算法必然会带来空间碎片                                                 |
+| G1 (Garbage First)                 | Region | 标记-整理、标记-复制 | 并发标记       | 1. 垃圾收集器技术发展历史上里程牌式的成功<br/>2.基于Region的内存布局<br/>3. JDK 7 Update 4正式提供商用                                                                                                                                                                                              |
+| Shenandoah                         | Region |             | 并发标记、并发整理  | 是一款只有OpenJDK才会包含，而OracleJDK里反而不存在的收集器                                                                                                                                                                                                                               |
+| ZGC                                | Region |             | 并发整理       | 2018年Oracle创建JEP333将ZGC提交给OpenJDK，推动其进入OpenJDK发布清单之中                                                                                                                                                                                                                |
 
 ### 垃圾收集相关常用参数
 
 ![](/images/jvm/jvm-4.png)
+
+## 十三 线程安全与锁优化
+
+[Amdahl's Law(阿姆达尔定律)](https://jenkov.com/tutorials/java-concurrency/amdahls-law.html)
+
+### 线程安全
+
+> 当多个线程同时访问一个对象时，如果不用考虑这些线程在运行时环境下的调度和交替执行，也不需要进行额外的同步，或者在调用方进行任何其他的协调操作，调用这个对象的行为都可以获得正确的结果，那就称这个对象是线程安全的。
+
+- Java语言中各种操作共享的数据
+    - 不可变
+    - 绝对线程安全
+    - 相对线程安全
+    - 线程兼容
+    - 线程对立
+
+- 线程安全实现方法
+    - 互斥同步(Mutual Exclusion & Synchronization)
+    - 非阻塞同步(Non-Blocking Synchronization)
+    - 无同步方案
+
+### 锁优化
+
+#### 自旋锁和自适应自旋(Adaptive Spinning)
+
+#### 锁消除(Lock Elimination)
+
+#### 锁粗化(Lock Coarsening)
+
+#### 轻量级锁(Lightweight Locking)
+
+![HotSpot虚拟机对象头Mark Word](/images/jvm/jvm-13-1.png)
+
+#### 偏向锁(Biased Locking)
+

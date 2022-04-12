@@ -1,6 +1,6 @@
 module.exports = [
     {
-        title: '🐔Operating System',
+        title: 'Operating System',
         collapsable: false,
         sidebarDepth: 2,
         children: [
@@ -10,6 +10,7 @@ module.exports = [
                 sidebarDepth: 2,
                 children: [
                     '/zh/os/computer/nous',
+                    '/zh/os/computer/network',
                 ]
             },
             {

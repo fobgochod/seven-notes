@@ -1,6 +1,6 @@
 module.exports = [
     {
-        title: '🐵Database',
+        title: 'Database',
         collapsable: false,
         sidebarDepth: 2,
         children: [

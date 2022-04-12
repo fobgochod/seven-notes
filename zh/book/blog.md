@@ -1,5 +1,9 @@
 # 博客
 
+## [Why技术](https://www.whywhy.vip)
+
+[Why技术](this-is-why.md)
+
 ## [美团技术团队](https://tech.meituan.com)
 
 [https://tech.meituan.com](https://tech.meituan.com)

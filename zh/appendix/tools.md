@@ -68,7 +68,7 @@ cd /usr/local/src
 lcd e:/111
 
 # 4.上传recerver.go到服务器上
-put recerver.go 
+put recerver.go
 
 # 5.下载recerver.go到自己的电脑上
 get recerver.go
@@ -77,3 +77,19 @@ get recerver.go
 ### TreeSize
 
 [https://www.jam-software.com/treesize_free](https://www.jam-software.com/treesize_free)
+
+### Chromium
+
+[https://download-chromium.appspot.com](https://download-chromium.appspot.com)
+
+> 手动下载Chromium文件，解压后放在本地
+
+```sh
+# 全局安装puppeteer
+npm install -g puppeteer
+# 下载下来的文件 chrome-win.zip
+node_modules\puppeteer\.local-chromium\win64-686378(系统类型-版本号)\chrome-win(解压出的文件)
+# 版本号来自
+puppeteer\package.json->puppeteer.chromium_revision
+```
+

@@ -1,6 +1,6 @@
 module.exports = [
     {
-        title: '🐰Backend',
+        title: 'Backend',
         collapsable: false,
         sidebarDepth: 2,
         children: [

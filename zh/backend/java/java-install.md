@@ -7,6 +7,8 @@
 - [http://jdk.java.net/java-se-ri/8-MR3](http://jdk.java.net/java-se-ri/8-MR3)
 - [OpenJDK Download](http://jdk.java.net/archive)
 - [JDK Bugs](https://bugs.openjdk.java.net)
+- [Dev Java](https://dev.java)
+- [Inside Java](https://inside.java)
 
 ## Linux
 

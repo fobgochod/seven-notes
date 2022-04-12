@@ -1,6 +1,6 @@
 module.exports = [
     {
-        title: '🐮Introduction',
+        title: 'Introduction',
         collapsable: false,
         sidebarDepth: 2,
         children: [
@@ -14,19 +14,19 @@ module.exports = [
     ...require('./sidebar/database'),
     ...require('./sidebar/os'),
     {
-        title: '🐶Reading Notes',
+        title: 'Reading Notes',
         collapsable: false,
         sidebarDepth: 2,
         children: [
+            '/zh/book/interview/',
             '/zh/book/mashibing',
-            '/zh/book/this-is-why',
             '/zh/book/blog',
             '/zh/book/on-java-8',
             '/zh/book/understanding-the-jvm',
         ]
     },
     {
-        title: '🐷Appendix',
+        title: 'Appendix',
         collapsable: false,
         sidebarDepth: 2,
         children: [

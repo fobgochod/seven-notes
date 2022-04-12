@@ -19,4 +19,13 @@
 </GitHubWrapper>
 
 
-<GlobalTOC pages='/' :level='0' >Loading...</GlobalTOC>
+<a href="https://dev.java">
+    <img src="https://dev.java/assets/images/java-affinity-logo-icode-lg.png" />
+    <img src="https://dev.java/assets/images/duke_world.png" height="353" align="right" alt="Duke spinning the global"/>
+</a>
+
+
+<div style="padding-top: 20px">
+    <h2 id="备案">备案</h2>
+    <p>网站备案信息：<a href="http://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">皖ICP备18020875号</a></p>
+</div>
