@@ -20,8 +20,8 @@
 
 
 <a href="https://dev.java">
-    <img src="https://dev.java/assets/images/java-affinity-logo-icode-lg.png" />
-    <img src="https://dev.java/assets/images/duke_world.png" height="353" align="right" alt="Duke spinning the global"/>
+    <img src="https://dev.java/assets/images/duke-celebrate.png" height="300" />
+    <img src="https://dev.java/assets/images/duke_world.png" height="300" align="right"/>
 </a>
 
 

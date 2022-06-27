@@ -126,7 +126,8 @@
 
 > 注意：并行和并发都是并发编程中的专业名词，在谈论垃圾收集器的上下文语境中，它们可以理解为
 >- 并行（Parallel）：并行描述的是多条垃圾收集器线程之间的关系，说明同一时间有多条这样的线程在协同工作，通常默认此时用户线程是处于等待状态。
->- 并发（Concurrent）：并发描述的是垃圾收集器线程与用户线程之间的关系，说明同一时间垃圾收集器线程与用户线程都在运行。由于用户线程并未被冻结，所以程序仍然能响应服务请求，但由于垃圾收集器线程占用了一部分系统资源，此时应用程序的处理的吞吐量将受到一定影响。
+>-
+并发（Concurrent）：并发描述的是垃圾收集器线程与用户线程之间的关系，说明同一时间垃圾收集器线程与用户线程都在运行。由于用户线程并未被冻结，所以程序仍然能响应服务请求，但由于垃圾收集器线程占用了一部分系统资源，此时应用程序的处理的吞吐量将受到一定影响。
 
 ![](/images/jvm/jvm-2.png)
 ![](/images/jvm/jvm-3.png)
@@ -143,11 +144,43 @@
 | Shenandoah                         | Region |             | 并发标记、并发整理  | 是一款只有OpenJDK才会包含，而OracleJDK里反而不存在的收集器                                                                                                                                                                                                                               |
 | ZGC                                | Region |             | 并发整理       | 2018年Oracle创建JEP333将ZGC提交给OpenJDK，推动其进入OpenJDK发布清单之中                                                                                                                                                                                                                |
 
+
 ### 垃圾收集相关常用参数
 
 ![](/images/jvm/jvm-4.png)
 
-## 十三 线程安全与锁优化
+## 第10章 前端编译与优化
+
+- 前端编译器：
+    - 把*.java文件转变成*.class文件的过程
+    - JDK的Javac、Eclipse JDT中的增量式编译器（ECJ）。
+- 即时编译器：（常称JIT编译器，Just In Time Compiler）
+    - 运行期把字节码转变成本地机器码的过程
+    - HotSpot虚拟机的C1、C2编译器，Graal编译器。
+- 提前编译器：（常称AOT编译器，Ahead Of Time Compiler）
+    - 直接把程序编译成与目标机器指令集相关的二进制代码的过程
+    - JDK的Jaotc、GNU Compiler for the Java（GCJ）、Excelsior JET。
+
+### 1.Java与C#的泛型
+
+- Java选择的泛型实现方式叫作“类型擦除式泛型”（Type Erasure Generics）
+- C#选择的泛型实现方式是“具现化式泛型”（Reified Generics）
+
+## 第11章 后端编译与优化
+
+![](/images/jvm/jvm-11-1.png)
+
+> 1. 目前主流的两款商用Java虚拟机（HotSpot、OpenJ9）里，Java程序最初都是通过解释器（Interpreter）进行解释执行的，
+> 2. 当虚拟机发现某个方法或代码块的运行特别频繁，就会把这些代码认定为“热点代码”（HotSpot Code），
+> 3. 为了提高热点代码的执行效率，在运行时，虚拟机将会把这些代码编译成本地机器码，并以各种手段尽可能地进行代码优化，
+> 4. 运行时完成这个任务的后端编译器被称为即时编译器
+
+> HotSpot虚拟机中内置了两个（或三个）即时编译器，其中有两个编译器存在已久，分别被称为
+> - “客户端编译器”（Client Compiler），简称为C1编译器
+> - “服务端编译器”（Server Compiler），简称为C2编译器（部分资料和JDK源码中C2也叫Opto编译器）
+> - 第三个是在JDK 10时才出现的、长期目标是代替C2的Graal编译器
+
+## 第13章 线程安全与锁优化
 
 [Amdahl's Law(阿姆达尔定律)](https://jenkov.com/tutorials/java-concurrency/amdahls-law.html)
 
