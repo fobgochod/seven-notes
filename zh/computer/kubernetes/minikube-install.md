@@ -15,7 +15,7 @@
 
 #### 安装Docker
 
-[Docker Install](zh/os/docker/docker-install.md)
+[Docker Install](zh/computer/docker/docker-install.md)
 
 ```sh
 vi /usr/lib/systemd/system/docker.service

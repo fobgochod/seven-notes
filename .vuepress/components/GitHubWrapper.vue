@@ -10,7 +10,7 @@
      * 但直接写GitHub的raw地址，在国内访问又经常被墙阻断，所以在.md文件中做一下地址转换，网站中用CDN，GitHub中用raw
      */
     export default {
-        name: "GitHubWrapper",
+        name: "github-wrapper",
         mounted() {
             const GIT_PREFIX = 'https://raw.githubusercontent.com/fobgochod/seven-notes/master/.vuepress/public/images'
             const ICYFENIX_CN = 'https://fobgochod.com/images'

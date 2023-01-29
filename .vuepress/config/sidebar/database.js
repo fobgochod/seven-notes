@@ -1,12 +1,11 @@
 module.exports = [
     {
-        title: 'Database',
+        title: '数据库',
         collapsable: false,
         sidebarDepth: 2,
         children: [
             {
                 title: 'MySQL',
-                collapsable: false,
                 sidebarDepth: 2,
                 children: [
                     '/zh/database/mysql/data',
@@ -15,7 +14,6 @@ module.exports = [
             },
             {
                 title: 'MariaDB',
-                collapsable: false,
                 sidebarDepth: 2,
                 children: [
                     '/zh/database/mariadb/mariadb-install',
@@ -25,7 +23,6 @@ module.exports = [
             },
             {
                 title: 'Redis',
-                collapsable: false,
                 sidebarDepth: 2,
                 children: [
                     '/zh/database/redis/redis-install',
@@ -36,7 +33,6 @@ module.exports = [
             },
             {
                 title: 'MongoDB',
-                collapsable: false,
                 sidebarDepth: 2,
                 children: [
                     '/zh/database/mongodb/mongodb-install',

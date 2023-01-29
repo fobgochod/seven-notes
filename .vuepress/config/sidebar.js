@@ -1,6 +1,11 @@
 module.exports = [
     {
-        title: 'Introduction',
+        title: '目录',
+        collapsable: false,
+        path: '/SUMMARY.md'
+    },
+    {
+        title: '前言',
         collapsable: false,
         sidebarDepth: 2,
         children: [
@@ -9,24 +14,32 @@ module.exports = [
             '/zh/introduction/guide/quick-start'
         ]
     },
-    ...require('./sidebar/backend'),
-    ...require('./sidebar/frontend'),
+    ...require('./sidebar/developer'),
     ...require('./sidebar/database'),
-    ...require('./sidebar/os'),
+    ...require('./sidebar/computer'),
     {
-        title: 'Reading Notes',
+        title: '读书笔记',
         collapsable: false,
         sidebarDepth: 2,
         children: [
-            '/zh/book/interview/',
-            '/zh/book/mashibing',
-            '/zh/book/blog',
-            '/zh/book/on-java-8',
-            '/zh/book/understanding-the-jvm',
+            '/zh/notes/understanding-the-jvm',
+            '/zh/notes/on-java-8',
+            '/zh/notes/mashibing',
+            '/zh/notes/blog',
+            {
+                title: '面试',
+                collapsable: false,
+                sidebarDepth: 2,
+                children: [
+                    '/zh/notes/interview/abstract-queued-synchronizer',
+                    '/zh/notes/interview/thread-pool',
+                    '/zh/notes/interview/java-virtual-machine',
+                ]
+            },
         ]
     },
     {
-        title: 'Appendix',
+        title: '附录',
         collapsable: false,
         sidebarDepth: 2,
         children: [

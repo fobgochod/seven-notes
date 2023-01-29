@@ -1,9 +1,9 @@
 # mysql调优--数据类型和schema优化
 
 >数据结构
-[https://www.cs.usfca.edu/~galles/visualization/Algorithms.html](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
-[https://visualgo.net/zh](https://visualgo.net/zh)
-[https://www.geeksforgeeks.org](https://www.geeksforgeeks.org)
+- [https://www.cs.usfca.edu/~galles/visualization/Algorithms.html](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+- [https://visualgo.net/zh](https://visualgo.net/zh)
+- [https://www.geeksforgeeks.org](https://www.geeksforgeeks.org)
 
 ## 数据类型和schema优化
 
@@ -103,7 +103,7 @@
 	  - 另一个从父表冗余一些数据到子表的理由是排序的需要。
 	  - 缓存衍生值也是有用的。如果需要显示每个用户发了多少消息（类似论坛的），可以每次执行一个昂贵的自查询来计算并显示它；也可以在user表中建一个num_messages列，每当用户发新消息时更新这个值。
 	- 案例
-	  - 范式设计 
+	  - 范式设计
         ![](/images/mysql/mysql-3.png)
 	  - 反范式设计
 		![](/images/mysql/mysql-4.png)
@@ -233,7 +233,7 @@ explain select staname,ename supname from (select ename staname,mgr from emp) t 
 
 --UNCACHEABLE SUBQUERY：表示使用子查询的结果不能被缓存
  explain select * from emp where empno = (select empno from emp where deptno=@@sort_buffer_size);
- 
+
 --uncacheable union:表示union的查询结果不能被缓存：sql语句未验证
 ```
 
@@ -241,15 +241,15 @@ explain select staname,ename supname from (select ename staname,mgr from emp) t 
 
 对应行正在访问哪一个表，表名或者别名，可能是临时表或者union合并结果集
 
-1、如果是具体的表名，则表明从实际的物理表中获取数据，当然也可以是表的别名  
-2、表名是derivedN的形式，表示使用了id为N的查询产生的衍生表  
+1、如果是具体的表名，则表明从实际的物理表中获取数据，当然也可以是表的别名
+2、表名是derivedN的形式，表示使用了id为N的查询产生的衍生表
 ​3、当有union result的时候，表名是union n1,n2等的形式，n1,n2表示参与union的id
 
 ### type
 
 type显示的是访问类型，访问类型表示我是以何种方式去访问我们的数据，最容易想的是全表扫描，直接暴力的遍历一张表去寻找需要的数据，效率非常低下，访问的类型有很多，效率从最好到最坏依次是：
 
->system > const > eq_ref > ref > fulltext > ref_or_null > index_merge > unique_subquery > index_subquery > range > index > ALL 
+>system > const > eq_ref > ref > fulltext > ref_or_null > index_merge > unique_subquery > index_subquery > range > index > ALL
 
 一般情况下，得保证查询至少达到range级别，最好能达到ref
 
@@ -260,7 +260,7 @@ explain select * from emp;
 --index：全索引扫描这个比all的效率要好，主要有两种情况，一种是当前的查询时覆盖索引，即我们需要的数据在索引中就可以索取，或者是使用了索引进行排序，这样就避免数据的重排序
 explain  select empno from emp;
 
---range：表示利用索引查询的时候限制了范围，在指定范围内进行查询，这样避免了index的全索引扫描，适用的操作符： =, <>, >, >=, <, <=, IS NULL, BETWEEN, LIKE, or IN() 
+--range：表示利用索引查询的时候限制了范围，在指定范围内进行查询，这样避免了index的全索引扫描，适用的操作符： =, <>, >, >=, <, <=, IS NULL, BETWEEN, LIKE, or IN()
 explain select * from emp where empno between 7000 and 7500;
 
 --index_subquery：利用索引来关联子查询，不再扫描全表
@@ -268,7 +268,7 @@ explain select * from emp where emp.job in (select job from t_job);
 
 --unique_subquery:该连接类型类似与index_subquery,使用的是唯一索引
  explain select * from emp e where e.deptno in (select distinct deptno from dept);
- 
+
 --index_merge：在查询过程中需要多个索引组合使用，没有模拟出来
 
 --ref_or_null：对于某个字段即需要关联条件，也需要null值的情况下，查询优化器会选择这种访问方式
@@ -283,11 +283,11 @@ explain select * from emp,emp2 where emp.empno = emp2.empno;
 
 --const：这个表至多有一个匹配行，
 explain select * from emp where empno = 7369;
- 
+
 --system：表只有一行记录（等于系统表），这是const类型的特例，平时不会出现
 ```
 
-### possible_keys 
+### possible_keys
 
 显示可能应用在这张表中的索引，一个或多个，查询涉及到的字段上若存在索引，则该索引将被列出，但不一定被查询实际使用
 
