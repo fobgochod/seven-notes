@@ -20,7 +20,7 @@ script:
 deploy:
   - provider: pages
     strategy: git
-    skip_cleanup: true
+    cleanup: true
     local_dir: .vuepress/dist
     token: $gh_token
     keep_history: true

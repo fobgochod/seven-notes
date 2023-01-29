@@ -19,17 +19,18 @@
         "url": "git+https://github.com/fobgochod/seven-notes.git"
     },
     "devDependencies": {
-        "@vssue/api-github-v4": "^1.4.0",
-        "@vssue/vuepress-plugin-vssue": "^1.4.6",
+        "@vssue/api-github-v4": "1.4.0",
+        "@vssue/vuepress-plugin-vssue": "1.4.6",
         "@vuepress/plugin-back-to-top": "1.9.7",
         "@vuepress/plugin-medium-zoom": "1.9.7",
-        "clipboard": "^2.0.4",
-        "easy-pdf-merge": "^0.2.0",
-        "github-buttons": "^2.13.0",
-        "markdown-it-task-lists": "^2.1.1",
-        "moment": "^2.27.0",
-        "puppeteer": "^1.11.0",
+        "clipboard": "2.0.4",
+        "easy-pdf-merge": "0.2.0",
+        "github-buttons": "2.13.0",
+        "markdown-it-task-lists": "2.1.1",
+        "moment": "2.27.0",
+        "puppeteer": "1.11.0",
         "vuepress": "1.9.7",
-        "vue": "2.6.14"
+        "vue": "2.7.14",
+        "vue-server-renderer": "2.7.14"
     }
 }
