@@ -44,8 +44,9 @@ jobs:
             url: ${{ steps.deployment.outputs.page_url }}
 
         # Specify runner + deployment step
+        name: Deploy
         runs-on: ubuntu-latest
         steps:
             -   name: Deploy to GitHub Pages
                 id: deployment
-                uses: actions/deploy-pages@v1
+                uses: actions/deploy-pages@v1.2.3
