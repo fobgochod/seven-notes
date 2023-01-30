@@ -1,52 +1,51 @@
 name: Deploy to GitHub Pages
 on:
-  push:
-    branches: 
-      - master
-  pull_request:
+    push:
+        branches:
+            - master
 
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:  
-      - name: Fetch Sources
-        uses: actions/checkout@master
-      
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 10
-      
-      - name: Install and Build
-        run: | 
-          npm install
-          npm run build
-          echo "fobgochod.com" >> .vuepress/dist/CNAME
-    
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: .vuepress/dist
-          
-#   # Deploy job
-#   deploy:
-#     # Add a dependency to the build job
-#     needs: build
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Fetch Sources
+                uses: actions/checkout@master
 
-#     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-#     permissions:
-#       pages: write      # to deploy to Pages
-#       id-token: write   # to verify the deployment originates from an appropriate source
+            -   name: Setup Node
+                uses: actions/setup-node@v3
+                with:
+                    node-version: 10
 
-#     # Deploy to the github-pages environment
-#     environment:
-#       name: github-pages
-#       url: fobgochod/seven-notes
+            -   name: Install and Build
+                run: |
+                    npm install
+                    npm run build
+                    echo "fobgochod.com" >> .vuepress/dist/CNAME
 
-#     # Specify runner + deployment step
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Deploy to GitHub Pages
-#         id: deployment
-#         uses: actions/deploy-pages@v1
+#            -   name: Deploy
+#                uses: JamesIves/github-pages-deploy-action@v4
+#                with:
+#                    folder: .vuepress/dist
+
+
+    deploy:
+        # Add a dependency to the build job
+        needs: build
+
+        # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+        permissions:
+            pages: write      # to deploy to Pages
+            id-token: write   # to verify the deployment originates from an appropriate source
+
+        # Deploy to the github-pages environment
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+
+        # Specify runner + deployment step
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Deploy to GitHub Pages
+                id: deployment
+                uses: actions/deploy-pages@v1
