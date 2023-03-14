@@ -1,12 +1,12 @@
 # redis的持久化RDB、fork、copyonwrite、AOF、RDB&AOF混合使用
 
-## 单机持久化 
+## 单机持久化
 
 ### RDB
 
 - RDB
 - 父子进程
-- fork copyonwrite
+- fork copy-on-write
 
 - 问题：
     - 不支持拉链 只有一个dump.rdb
@@ -28,15 +28,15 @@
 - 原点：redis是内存数据库
     - 写操作会触发IO
     - NO、always、每秒
-        - # no: don't fsync, just let the OS flush the data when it wants. Faster.
-        - # always: fsync after every write to the append only log. Slow, Safest.
-        - # everysec: fsync only one time every second. Compromise.
+        - no: don't fsync, just let the OS flush the data when it wants. Faster.
+        - always: fsync after every write to the append only log. Slow, Safest.
+        - everysec: fsync only one time every second. Compromise.
 
 ```sh
 BGSAVE
-redis-check-rdb dump.rdb 
+redis-check-rdb dump.rdb
 
 BGREWRITEAOF
 ```
 
-## 主从复制 
+## 主从复制

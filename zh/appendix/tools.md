@@ -31,6 +31,16 @@ nc -l -p 9090
 nc localhost 9090
 ```
 
+> linux
+
+```shell
+# server
+nc -l 9090
+nc -l localhost 9090
+# client
+nc localhost 9090
+```
+
 ### ngrok
 
 [https://ngrok.com/download](https://ngrok.com/download)
